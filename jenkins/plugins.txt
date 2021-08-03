@@ -1,0 +1,3 @@
+git
+configuration-as-code:latest
+ansible
