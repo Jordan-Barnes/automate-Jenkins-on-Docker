@@ -1,0 +1,14 @@
+services:
+    jenkins-docker:
+        container_name: jenkins_no_redhat
+        build: jenkins
+        ports:
+                - '8080:8080'
+                - '50000:50000'
+    
+        environment:
+                CASC_JENKINS_CONFIG: $CASC_JENKINS_CONFIG
+                JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+                ANSIBLE_CONFIG: /home/jenkins/ansible/ansible.cfg
+                JENKINS_ADMIN_PASSWORD: $JENKINS_ADMIN_PASSWORD
+                JENKINS_ADMIN_ID: $JENKINS_ADMIN_ID
